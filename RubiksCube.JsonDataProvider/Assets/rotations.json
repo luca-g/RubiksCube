@@ -1,0 +1,75 @@
+{
+  "rotations": [
+    {
+      "clockwiseKey": "U",
+      "counterclockwiseKey": "U'",
+      "rotateFace": 0,
+      "rotateOther": [
+        "F1R0n=F2R0n",
+        "F2R0n=F3R0n",
+        "F3R0n=F4R0n",
+        "F4R0n=F1R0n"
+      ]
+    },
+    {
+
+      "clockwiseKey": "D",
+      "counterclockwiseKey": "D'",
+      "rotateFace": 5,
+      "rotateOther": [
+        "F1R2n=F4R2n",
+        "F2R2n=F3R2n",
+        "F3R2n=F4R2n",
+        "F4R2n=F1R2n"
+      ]
+    },
+    {
+
+      "clockwiseKey": "L",
+      "counterclockwiseKey": "L'",
+      "rotateFace": 1,
+      "rotateOther": [
+        "F0C0n=F4C2i",
+        "F2C0n=F0C0n",
+        "F5C0n=F2C0n",
+        "F4C2i=F5C0n"
+      ]
+    },
+    {
+
+      "clockwiseKey": "F",
+      "counterclockwiseKey": "F'",
+      "rotateFace": 2,
+      "rotateOther": [
+        "F0R2n=F1C2i",
+        "F1C2n=F5R0n",
+        "F3C0n=F0R3n",
+        "F5R0n=F3C0i"
+      ]
+    },
+    {
+
+      "clockwiseKey": "R",
+      "counterclockwiseKey": "R'",
+      "rotateFace": 3,
+      "rotateOther": [
+        "F0C2n=F2C2n",
+        "F2C2n=F5C2n",
+        "F5C2n=F4C0i",
+        "F4C0i=F0C3n"
+      ]
+    },
+    {
+
+      "clockwiseKey": "B",
+      "counterclockwiseKey": "B'",
+      "rotateFace": 4,
+      "rotateOther": [
+        "F0R0n=F3C2n",
+        "F1C0i=F0R0n",
+        "F3C2n=F5R2i",
+        "F5R2n=F1C0n"
+      ]
+    }
+  ]
+}
