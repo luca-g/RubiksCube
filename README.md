@@ -1,6 +1,6 @@
 # RubiksCube
 
-Welcome to the Rubik's Cube Simulator, a console-based application designed to offer a virtual experience of solving a Rubik's Cube. This simulator replicates the physical actions of rotating the Rubik's Cube faces in a 3D environment, allowing users to apply and test their solving strategies from the comfort of their computer. Whether you're a seasoned cuber looking to practice your algorithms or a beginner eager to learn the basics of cube solving, this simulator provides an accessible and intuitive platform for enhancing your skills.
+Welcome to the Rubik's Cube Simulator, a console-based application designed to offer a virtual experience of solving a Rubik's Cube. This simulator replicates the physical actions of rotating the Rubik's Cube faces in a 3D environment.
 
 ## Features
 Simulate rotations of the Rubik's Cube in all directions.
