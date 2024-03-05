@@ -18,9 +18,9 @@
       "rotateFace": 5,
       "rotateOther": [
         "F1R2n=F4R2n",
-        "F2R2n=F3R2n",
-        "F3R2n=F4R2n",
-        "F4R2n=F1R2n"
+        "F2R2n=F1R2n",
+        "F3R2n=F2R2n",
+        "F4R2n=F3R2n"
       ]
     },
     {

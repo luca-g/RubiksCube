@@ -29,16 +29,20 @@ namespace RubiksCube.Core.Decorator.Rotate
 		}
 		protected void RotateSquares(ICubeFaceRotation cubeFaceRotation, bool isClockwise)
 		{
+			var temp = new Dictionary<(int, int), eSquareColor>();
 			foreach (var faceAndSquaresIndexes in cubeFaceRotation.CopySourceDestinationIndexes)
 			{
-				RotateSquares(_cubeData, faceAndSquaresIndexes, isClockwise);
+				SaveTempSquares(temp, _cubeData, faceAndSquaresIndexes, isClockwise);
+			}
+
+			foreach (var faceAndSquaresIndexes in cubeFaceRotation.CopySourceDestinationIndexes)
+			{
+				RotateSquares(temp, _cubeData, faceAndSquaresIndexes, isClockwise);
 			}
 		}
-		protected static void RotateSquares(ICubeData cubeData, ISquaresCopySourceDestinationIndexes faceAndSquaresIndexes, bool isClockwise)
+		protected static void SaveTempSquares(Dictionary<(int, int), eSquareColor> temp, ICubeData cubeData, ISquaresCopySourceDestinationIndexes faceAndSquaresIndexes, bool isClockwise)
 		{
 			var source = isClockwise ? faceAndSquaresIndexes.Source : faceAndSquaresIndexes.Destination;
-			var destination = isClockwise ? faceAndSquaresIndexes.Destination : faceAndSquaresIndexes.Source;
-			var temp = new Dictionary<(int, int), eSquareColor>();
 			for (int i = 0; i < source.SquareIndexes.Length; i++)
 			{
 				temp.Add(
@@ -46,6 +50,11 @@ namespace RubiksCube.Core.Decorator.Rotate
 					cubeData.Faces[source.FaceId].Squares[source.SquareIndexes[i]]
 					);
 			}
+		}
+		protected static void RotateSquares(Dictionary<(int, int), eSquareColor> temp, ICubeData cubeData, ISquaresCopySourceDestinationIndexes faceAndSquaresIndexes, bool isClockwise)
+		{
+			var source = isClockwise ? faceAndSquaresIndexes.Source : faceAndSquaresIndexes.Destination;
+			var destination = isClockwise ? faceAndSquaresIndexes.Destination : faceAndSquaresIndexes.Source;
 			for (int i = 0; i < source.SquareIndexes.Length; i++)
 			{
 				cubeData.Faces[destination.FaceId].Squares[destination.SquareIndexes[i]] =

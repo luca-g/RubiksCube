@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RubiksCube.CoreTests", "Rub
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RubiksCube.JsonDataProviderTests", "RubiksCube.JsonDataProviderTests\RubiksCube.JsonDataProviderTests.csproj", "{43E9C3C9-A9A1-4905-809C-9733AB39D690}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RubiksCube.FunctionalTest", "RubiksCube.FunctionalTest\RubiksCube.FunctionalTest.csproj", "{8AA66BAE-810A-4047-9E31-E272C03F861E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{43E9C3C9-A9A1-4905-809C-9733AB39D690}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{43E9C3C9-A9A1-4905-809C-9733AB39D690}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{43E9C3C9-A9A1-4905-809C-9733AB39D690}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AA66BAE-810A-4047-9E31-E272C03F861E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AA66BAE-810A-4047-9E31-E272C03F861E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AA66BAE-810A-4047-9E31-E272C03F861E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AA66BAE-810A-4047-9E31-E272C03F861E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -2,8 +2,9 @@
 {
 	public interface IRotationCommand
 	{
-		public ICubeFaceRotation CubeFaceRotation { get; }
-		public bool IsClockwise { get; }
-		public void Execute(ICubeData cubeData);
+		string CommandName { get; }
+		ICubeFaceRotation CubeFaceRotation { get; }
+		bool IsClockwise { get; }
+		void Execute(ICubeData cubeData);
 	}
 }
