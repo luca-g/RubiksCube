@@ -2,12 +2,12 @@
 
 namespace RubiksCube.JsonDataProvider.Model
 {
-	public class FaceAndSquares : IFaceAndSquaresIndexes
+	public class FaceAndSquaresIndexes : IFaceAndSquaresIndexes
 	{
 		public int FaceId { get; private set; }
 		public int[] SquareIndexes { get; private set; }
 
-		public FaceAndSquares(string faceRowColumn)
+		public FaceAndSquaresIndexes(string faceRowColumn)
 		{
 			Validate(faceRowColumn);
 			(FaceId, SquareIndexes) = Parse(faceRowColumn);

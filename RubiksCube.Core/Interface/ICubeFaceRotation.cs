@@ -5,6 +5,6 @@
 		public string ClockwiseKey { get; }
 		public string CounterclockwiseKey { get; }
 		public int RotateFaceId { get; }
-		public List<ISquaresCopySourceDestinationIndexes> CopySourceDestinationIndexes { get; set; }
+		public IList<ISquaresCopySourceDestinationIndexes> CopySourceDestinationIndexes { get; set; }
 	}
 }
