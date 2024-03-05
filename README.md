@@ -17,12 +17,16 @@ Open the Solution in Visual Studio
 Open Visual Studio and navigate to the 'Open Project/Solution' option. Locate the downloaded folder and select the solution file (RubiksCube.sln) to open the solution in Visual Studio.
 Set the Starting Project
 
-In the Solution Explorer within Visual Studio, find the RubiksCode.Console project. Right-click on it and select 'Set as StartUp Project'. This action tells Visual Studio to run this specific project when you start the application.
+In the Solution Explorer within Visual Studio, find the **RubiksCode.Console** project. Right-click on it and select **'Set as StartUp Project'**. This action tells Visual Studio to run this specific project when you start the application.
 Run the Simulator
 
-Press the 'Start' button in Visual Studio or use the F5 key to build and run the application. The console window will open, displaying the Rubik's Cube Simulator's initial state and available commands.
+Press the **'Start'** button in Visual Studio or use the **F5 key** to build and run the application. The console window will open, displaying the Rubik's Cube Simulator's initial state and available commands.
 Enjoy the Simulator
 
 Follow the on-screen instructions to input commands and rotate the cube.
+
+## Analysis
+
+In the RubikCube.Console project, the **Analysis.txt** file details the implementation of the rotation algorithm, offering insight into the solution strategy used.
 
 Happy cubing!
