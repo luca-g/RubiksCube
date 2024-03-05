@@ -4,7 +4,7 @@ namespace RubiksCube.Core.Decorator.Rotate
 {
     public class CubeFaceRotate : ICubeFaceRotateDecorator
 	{
-		private readonly ICubeFaceData _cubeFaceData;
+		protected readonly ICubeFaceData _cubeFaceData;
 		public CubeFaceRotate(ICubeFaceData cubeFaceData)
 		{
 			_cubeFaceData = cubeFaceData;

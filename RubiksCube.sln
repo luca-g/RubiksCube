@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34511.84
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RubiksCube.Core", "RubiksCube.Core\RubiksCube.Core.csproj", "{683AC524-D316-4EDD-AEF5-436C5E9EE623}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RubiksCube.Core", "RubiksCube.Core\RubiksCube.Core.csproj", "{683AC524-D316-4EDD-AEF5-436C5E9EE623}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RubiksCube.JsonDataProvider", "RubiksCube.JsonDataProvider\RubiksCube.JsonDataProvider.csproj", "{AC26379C-08B1-4574-A174-62A7524B1191}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RubiksCube.JsonDataProvider", "RubiksCube.JsonDataProvider\RubiksCube.JsonDataProvider.csproj", "{AC26379C-08B1-4574-A174-62A7524B1191}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RubiksCube.CoreTests", "RubiksCube.CoreTests\RubiksCube.CoreTests.csproj", "{0605F208-5361-4667-B92B-72A9059718DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RubiksCube.JsonDataProviderTests", "RubiksCube.JsonDataProviderTests\RubiksCube.JsonDataProviderTests.csproj", "{43E9C3C9-A9A1-4905-809C-9733AB39D690}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{AC26379C-08B1-4574-A174-62A7524B1191}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC26379C-08B1-4574-A174-62A7524B1191}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC26379C-08B1-4574-A174-62A7524B1191}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0605F208-5361-4667-B92B-72A9059718DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0605F208-5361-4667-B92B-72A9059718DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0605F208-5361-4667-B92B-72A9059718DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0605F208-5361-4667-B92B-72A9059718DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43E9C3C9-A9A1-4905-809C-9733AB39D690}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43E9C3C9-A9A1-4905-809C-9733AB39D690}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43E9C3C9-A9A1-4905-809C-9733AB39D690}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43E9C3C9-A9A1-4905-809C-9733AB39D690}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

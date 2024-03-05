@@ -32,7 +32,7 @@ namespace RubiksCube.JsonDataProvider.Model
 		}
 		protected static void Validate(string faceRowColumn)
 		{
-			if (faceRowColumn.Length != 4)
+			if (faceRowColumn.Length != 5)
 			{
 				throw new ArgumentException($"Invalid faceRowColumn length {faceRowColumn}");
 			}
