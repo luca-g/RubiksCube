@@ -1,0 +1,29 @@
+﻿Rubik's Cube Simulator
+
+The Rubik's Cube consists of 6 faces arranged as follows:
+
+.0..
+1234
+.5..
+
+Each face rotates clockwise with a specific command and counterclockwise with an appended apostrophe (') to the command. The cube's faces are colored White, Orange, Green, Red, Blue, and Yellow, starting in a default position:
+
+.W..
+OGRB
+.Y..
+
+Each face has a 3x3 tile configuration. The starting position is:
+
+0:WWWWWWWWW,1:OOOOOOOOO,2:GGGGGGGGG,3:RRRRRRRRR,4:BBBBBBBBB,5:YYYYYYYYY
+
+To rotate each face, use the following commands:
+
+Face 0 (White) clockwise: U, counterclockwise: U'
+Face 1 (Orange) clockwise: L, counterclockwise: L'
+Face 2 (Green) clockwise: F, counterclockwise: F'
+Face 3 (Red) clockwise: R, counterclockwise: R'
+Face 4 (Blue) clockwise: B, counterclockwise: B'
+Face 5 (Yellow) clockwise: D, counterclockwise: D'
+
+Combine rotations by separating them with commas. 
+Example: F,R',U,B',L,D'
