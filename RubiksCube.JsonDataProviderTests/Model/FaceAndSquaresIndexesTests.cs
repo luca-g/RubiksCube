@@ -12,6 +12,12 @@ namespace RubiksCube.JsonDataProvider.Model.Tests
 	[TestClass()]
 	public class FaceAndSquaresIndexesTests
 	{
+		public static string FaceAndSquaresIndexesToString(string text)
+		{
+			var face = new FaceAndSquaresIndexes(text);
+			return $"{face.FaceId}{string.Join("", face.SquareIndexes)}";
+		}
+		
 		[TestMethod()]
 		[DataRow("F0R0n","0012")]
 		[DataRow("F1R0n", "1012")]
@@ -29,8 +35,7 @@ namespace RubiksCube.JsonDataProvider.Model.Tests
 		[DataRow("F0C2i", "0852")]
 		public void FaceAndSquaresIndexesTest(string text, string expected)
 		{
-			var face = new FaceAndSquaresIndexes(text);
-			var f2s = $"{face.FaceId}{string.Join("", face.SquareIndexes)}";
+			var f2s = FaceAndSquaresIndexesToString(text);
 			Assert.AreEqual(expected, f2s);
 		}
 	}

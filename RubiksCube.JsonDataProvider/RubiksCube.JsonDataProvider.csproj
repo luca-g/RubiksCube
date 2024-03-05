@@ -14,4 +14,10 @@
     <ProjectReference Include="..\RubiksCube.Core\RubiksCube.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Assets\rotations.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

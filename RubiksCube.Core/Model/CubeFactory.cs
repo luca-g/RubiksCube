@@ -1,5 +1,6 @@
 ﻿using RubiksCube.Core.Decorator.Rotate;
 using RubiksCube.Core.Interface;
+using RubiksCube.JsonDataProvider.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,8 +9,17 @@ using System.Threading.Tasks;
 
 namespace RubiksCube.Core.Model
 {
-	internal class CubeFactory : ICubeFactory
+	public class CubeFactory : ICubeFactory
 	{
+		private readonly IRotationsDataProvider _rotationsDataProvider;
+		public IRotationsDataProvider GetRotationsDataProvider()
+		{
+			return _rotationsDataProvider;
+		}
+		public CubeFactory(IRotationsDataProvider rotationsDataProvider)
+		{
+			_rotationsDataProvider = rotationsDataProvider;
+		}
 		public ICubeData InstantiateCube()
 		{
 			return new CubeData(this);
@@ -29,6 +39,10 @@ namespace RubiksCube.Core.Model
 		public ICubeRotateDecorator InstantiateCubeRotateDecorator(ICubeData cubeData)
 		{
 			return new CubeRotate(cubeData);
+		}
+		public ICubeRotationCommandLoader GetCubeRotationCommandLoader()
+		{
+			return new CubeRotationCommandLoader(this);
 		}
 	}
 }
