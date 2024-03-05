@@ -7,7 +7,7 @@ Simulate rotations of the Rubik's Cube in all directions.
 Apply sequences of moves using simple commands.
 Visualize the state of the cube at any point in time.
 
-##How to Build/Run:
+## How to Build/Run:
 To get started with the Rubik's Cube Simulator, follow these simple steps:
 
 Visit the GitHub repository and download the project folder to your local machine. Alternatively, you can use Git to clone the repository directly.
