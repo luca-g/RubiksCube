@@ -26,4 +26,3 @@ Face 4 (Blue) clockwise: B, counterclockwise: B'
 Face 5 (Yellow) clockwise: D, counterclockwise: D'
 
 Combine rotations by separating them with commas. 
-Example: F,R',U,B',L,D'

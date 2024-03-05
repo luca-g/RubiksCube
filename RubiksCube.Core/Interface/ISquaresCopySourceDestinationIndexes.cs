@@ -8,7 +8,7 @@ namespace RubiksCube.Core.Interface
 {
 	public interface ISquaresCopySourceDestinationIndexes
 	{
-		public IFaceAndSquaresIndexes Destination { get; }
-		public IFaceAndSquaresIndexes Source { get; }
+		IFaceAndSquaresIndexes Destination { get; }
+		IFaceAndSquaresIndexes Source { get; }
 	}
 }

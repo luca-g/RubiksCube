@@ -2,7 +2,7 @@
 {
 	public interface IFaceAndSquaresIndexes
 	{
-		public int FaceId { get; }
-		public int[] SquareIndexes { get; }
+		int FaceId { get; }
+		int[] SquareIndexes { get; }
 	}
 }

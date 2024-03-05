@@ -2,6 +2,6 @@
 {
     public interface ICubeFaceData
 	{
-		public eSquareColor[] Squares { get; }
+		eSquareColor[] Squares { get; }
 	}
 }

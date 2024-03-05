@@ -2,9 +2,9 @@
 {
 	public interface ICubeFaceRotation
 	{
-		public string ClockwiseKey { get; }
-		public string CounterclockwiseKey { get; }
-		public int RotateFaceId { get; }
-		public IList<ISquaresCopySourceDestinationIndexes> CopySourceDestinationIndexes { get; set; }
+		string ClockwiseKey { get; }
+		string CounterclockwiseKey { get; }
+		int RotateFaceId { get; }
+		IList<ISquaresCopySourceDestinationIndexes> CopySourceDestinationIndexes { get; set; }
 	}
 }

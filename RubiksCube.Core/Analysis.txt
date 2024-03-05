@@ -1,59 +1,62 @@
-﻿The Rubiks cube is composed by 6 faces following this structure:
+﻿The Rubik's Cube consists of 6 faces arranged as follows:
 x0xx
 1234
 x5xx
 
-Where 0:top,2:front,5:bottom,1:left,3:right,4:back
+Where 0: top, 1: left, 2: front, 3: right, 4: back, 5: bottom.
 
-Each face is composed by an array with this index:
+Each face contains an array indexed like this:
 012
 345
 678
 
-Each face can rotate in 2 ways: clockwise and counterclockwise.
-Rotating face 0 and 5 is simple because faces 1234 are directly connected to each other.
-for example Face 1 Row 0 values will be replaced by Face 2 Row 0 values and so on.
+Faces can rotate in two ways: clockwise and counterclockwise. 
+Rotating faces 0 and 5 affects faces 1, 2, 3, and 4 directly. 
+For example, rotating face 1 means row 0 values will be replaced by 
+the row 0 values of face 2, and so on.
 
-In other cases the indexes needs to be inverted:
-To rotate face 1 clockwise Face 0 Column 0 copy values from Face 4 Column 2 inverting the indexes:
-F[0][0,3,6]=F[4][8,5,2]
+In some cases, indices need to be inverted. For example, to rotate 
+face 1 clockwise, you would copy the values from face 4 column 2 
+to face 0 column 0, inverting the indices like so:
+F[0][0,3,6] = F[4][8,5,2]
 
+To simplify notation and reduce errors, this format represents rotations:
+Face [F] (face id) [R/C] (row/column id) [n/i] (normal/inverted)
 
+Counterclockwise rotations are not listed separately, as they can be achieved 
+by inverting the operation order.
 
-
-
-Rotate 0 clockwise (key U):
+Rotate face 0 clockwise (key U):
 F1R0n=F2R0n
 F2R0n=F3R0n
 F3R0n=F4R0n
 F4R0n=F1R0n
 
-Rotate 5 clockwise (key D):
+Rotate face 5 clockwise (key D):
 F1R2n=F4R2n
-F2R2n=F3R2n
-F3R2n=F4R2n
-F4R2n=F1R2n
+F2R2n=F1R2n
+F3R2n=F2R2n
+F4R2n=F3R2n
 
-
-Rotate 1 clockwise (key L):
-F0C0n=F4C2i => here F4 has inverted indeces, I add an "i" to signal inverted
-F2C0n=F0C0n
-F5C0n=F2C0n
+Rotate face 1 clockwise (key L):
+F0C0n=F4C2i, (F4 has inverted indices, denoted by "i")
+F2C0n=F0C0n,
+F5C0n=F2C0n,
 F4C2i=F5C0n
 
-Rotate 2 clockwise (key F):
+Rotate face 2 clockwise (key F):
 F0R2n=F1C2i
 F1C2n=F5R0n
-F3C0n=F0R3n
+F3C0n=F0R2n
 F5R0n=F3C0i
 
-Rotate 3 clockwise (key R):
+Rotate face 3 clockwise (key R):
 F0C2n=F2C2n
 F2C2n=F5C2n
 F5C2n=F4C0i
-F4C0i=F0C3n
+F4C0i=F0C2n
 
-Rotate 4 clockwise (key B):
+Rotate face 4 clockwise (key B):
 F0R0n=F3C2n
 F1C0i=F0R0n
 F3C2n=F5R2i

@@ -9,7 +9,7 @@ namespace RubiksCube.Core.Interface
 {
 	public interface ICubeData
 	{
-		public ICubeFaceData[] Faces { get; }
-		public void Reset();
+		ICubeFaceData[] Faces { get; }
+		void Reset();
 	}
 }
