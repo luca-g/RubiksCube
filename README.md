@@ -12,7 +12,7 @@ To get started with the Rubik's Cube Simulator, follow these simple steps:
 
 Visit the GitHub repository and download the project folder to your local machine. Alternatively, you can use Git to clone the repository directly.
 
-Open Visual Studio and navigate to the 'Open Project/Solution' option. Locate the downloaded folder and select the solution file (RubiksCube.sln) to open the solution in Visual Studio.
+Open Visual Studio and navigate to the 'Open Project/Solution' option. Locate the downloaded folder and select the solution file (**RubiksCube.sln**) to open the solution in Visual Studio.
 Set the Starting Project
 
 In the Solution Explorer within Visual Studio, find the **RubiksCode.Console** project. Right-click on it and select **'Set as StartUp Project'**. This action tells Visual Studio to run this specific project when you start the application.
