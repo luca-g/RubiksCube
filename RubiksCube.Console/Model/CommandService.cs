@@ -2,7 +2,6 @@
 using Microsoft.Extensions.Options;
 using NLog.Config;
 using RubiksCube.Core.Interface;
-using RubiksCube.Core.Model;
 using System.Text;
 
 namespace RubiksCube.Console.Model
@@ -10,33 +9,19 @@ namespace RubiksCube.Console.Model
 	public class CommandService
 	{
 		private readonly ILogger<CommandService> _loggerService;
-		private readonly IOptions<AppConfiguration> _configuration;
-		private ICubeFactory? _cubeFactory;
+		private readonly ICubeFactory _cubeFactory;
 		private Dictionary<string, IRotationCommand>? _rotationCommands;
 		public CommandService(
 			ILogger<CommandService> logger,
-			IOptions<AppConfiguration> configuration)
+			ICubeFactory cubeFactory)
 		{
 			this._loggerService = logger;
-			this._configuration = configuration;
+			this._cubeFactory = cubeFactory;
 		}
 		public void LoadCommands()
 		{
-			if (this._configuration.Value.RotationFile == null)
-			{
-				this._loggerService.LogError("RotationFile is not set in appsettings.json");
-				throw new ArgumentNullException("RotationFile");
-			}
-			if (!File.Exists(this._configuration.Value.RotationFile))
-			{
-				this._loggerService.LogError("RotationFile not found");
-				throw new ArgumentNullException("RotationFile");
-			}
 			try
 			{
-				var dataProvider = new JsonDataProvider.Model.JsonDataProvider(this._configuration.Value.RotationFile);
-				_cubeFactory = new CubeFactory(dataProvider);
-
 				var rotationsLoader = _cubeFactory.GetCubeRotationCommandLoader();
 				var allCommands = rotationsLoader.LoadCommands();
 				_rotationCommands = allCommands.ToDictionary(t => t.CommandName, t => t);
