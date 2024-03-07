@@ -26,18 +26,18 @@ namespace RubiksCube.Console
 		{
 			try
 			{
-				_commandService.LoadCommands();
+				await _commandService.LoadCommandsAsync();
 			}
 			catch(Exception ex)
 			{
 				this._loggerService.LogError(ex,"Error loading commands from json file");
 				throw new Exception("Error loading commands from json file",ex);
 			}
-			await this.ReadCommands(cancellationToken);
+			await this.ReadCommandsAsync(cancellationToken);
 		}
-		protected void DisplayStringForCommand(string command)
+		protected async Task DisplayStringForCommandAsync(string command)
 		{
-			var result = _commandService.ExecuteCommands(command);
+			var result = await _commandService.ExecuteCommandsAsync(command);
 			if (result.error != null)
 			{
 				_loggerService.LogError(result.error);
@@ -49,7 +49,7 @@ namespace RubiksCube.Console
 				System.Console.WriteLine(result.result);
 			}
 		}
-		public async Task ReadCommands(CancellationToken cancellationToken)
+		public async Task ReadCommandsAsync(CancellationToken cancellationToken)
 		{
 			try
 			{
@@ -57,7 +57,7 @@ namespace RubiksCube.Console
 				if (_configuration.Value.DefaultRotation != null)
 				{
 					System.Console.WriteLine($"Example: {_configuration.Value.DefaultRotation}");
-					DisplayStringForCommand(_configuration.Value.DefaultRotation);
+					await DisplayStringForCommandAsync(_configuration.Value.DefaultRotation);
 				}
 				System.Console.WriteLine("");
 				while (!cancellationToken.IsCancellationRequested)
@@ -70,7 +70,7 @@ namespace RubiksCube.Console
 						if (command != null)
 						{
 							_loggerService.LogInformation($"Rotation entered: {command}");
-							DisplayStringForCommand(command);
+							await DisplayStringForCommandAsync(command);
 						}
 					}
 					catch (Exception ex)
@@ -81,7 +81,6 @@ namespace RubiksCube.Console
 						System.Console.WriteLine("Unexpected error");
 					}
 				}
-				await Task.CompletedTask;
 			}
 			catch (Exception ex)
 			{

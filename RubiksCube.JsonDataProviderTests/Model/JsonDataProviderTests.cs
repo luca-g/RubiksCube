@@ -12,12 +12,12 @@ namespace RubiksCube.JsonDataProvider.Model.Tests
 	public class JsonDataProviderTests
 	{
 		[TestMethod()]
-		public void LoadAllRotationsTest()
+		public async Task LoadAllRotationsTestAsync()
 		{
 			const string fileName = "Assets//rotations.json";
 			Assert.IsTrue(File.Exists(fileName));
 			var dataProvider = new JsonDataProvider(fileName);
-			var rotations = dataProvider.LoadAllRotations();
+			var rotations = await dataProvider.LoadAllRotationsAsync();
 			Assert.IsTrue(rotations.Any());
 			Assert.IsTrue(rotations.Count == 6);
 		}

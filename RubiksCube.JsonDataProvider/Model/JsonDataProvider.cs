@@ -8,15 +8,16 @@ namespace RubiksCube.JsonDataProvider.Model
 		{
 			_commandsFile = commandsFile;
 		}
-		public IList<ICubeFaceRotation> LoadAllRotations()
+		public async Task<IList<ICubeFaceRotation>> LoadAllRotationsAsync()
 		{
-			return LoadICubeFaceRotations(LoadCubeRotations(_commandsFile));
+			var rotations = await LoadCubeRotationsAsync(_commandsFile);
+			return LoadICubeFaceRotations(rotations);
 		}
-		protected static List<CubeRotationJson> LoadCubeRotations(string commandsFile)
+		protected async Task<List<CubeRotationJson>> LoadCubeRotationsAsync(string commandsFile)
 		{
 			if (!File.Exists(commandsFile))
 				throw new Exception($"File {commandsFile} not found");
-			var json = System.IO.File.ReadAllText(commandsFile);
+			var json = await System.IO.File.ReadAllTextAsync(commandsFile);
 			var root = Newtonsoft.Json.JsonConvert.DeserializeObject<CubeRotationJsonRoot>(json);
 			if (root?.Rotations == null)
 				throw new Exception($"Error loading cube rotations from file {commandsFile}");

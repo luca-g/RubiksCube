@@ -18,12 +18,12 @@ namespace RubiksCube.Console.Model
 			this._loggerService = logger;
 			this._cubeFactory = cubeFactory;
 		}
-		public void LoadCommands()
+		public async Task LoadCommandsAsync()
 		{
 			try
 			{
 				var rotationsLoader = _cubeFactory.GetCubeRotationCommandLoader();
-				var allCommands = rotationsLoader.LoadCommands();
+				var allCommands = await rotationsLoader.LoadCommandsAsync();
 				_rotationCommands = allCommands.ToDictionary(t => t.CommandName, t => t);
 			}
 			catch (Exception ex)
@@ -45,16 +45,16 @@ namespace RubiksCube.Console.Model
 			}
 			return sb.ToString();
 		}
-		public CommandResult ExecuteCommands(string commandsText)
+		public async Task<CommandResult> ExecuteCommandsAsync(string commandsText)
 		{
 			try
 			{
-				if (_cubeFactory == null)
-					LoadCommands();
-				if (_cubeFactory == null)
-					throw new Exception("Factory not loaded");
 				if (_rotationCommands == null)
-					throw new Exception("Commands not loaded");
+				{
+					await LoadCommandsAsync();
+					if (_rotationCommands == null)
+						throw new Exception("Commands not loaded");
+				}
 
 				var cube = _cubeFactory!.InstantiateCube();
 				foreach (var rotation in commandsText.Split(','))

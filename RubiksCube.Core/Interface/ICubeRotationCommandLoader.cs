@@ -2,6 +2,6 @@
 {
     public interface ICubeRotationCommandLoader
     {
-        IList<IRotationCommand> LoadCommands();
+		Task<IList<IRotationCommand>> LoadCommandsAsync();
     }
 }

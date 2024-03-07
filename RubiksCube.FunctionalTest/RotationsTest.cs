@@ -7,9 +7,9 @@ namespace RubiksCube.FunctionalTest
 	public class RotationsTest
 	{
 		[TestMethod]
-		public void TestStartingCube()
+		public async Task TestStartingCubeAsync()
 		{
-			var (factory, commands) = TestHelper.LoadFactoryAndCommands();
+			var (factory, commands) = await TestHelper.LoadFactoryAndCommandsAsync();
 			var cube = factory.InstantiateCube();
 			var faces = TestHelper.CubeToString(cube);
 			Assert.AreEqual(
@@ -28,9 +28,9 @@ namespace RubiksCube.FunctionalTest
 		[DataRow("F,R',U,B',L,D',D,L',B", "0:OWWOWWBBB,1:GGWOOYOOY,2:RRRGGWGGO,3:YBBRRRWWW,4:OOYYBBRBB,5:RRGYYGYYG")]
 		[DataRow("F,R',U,B',L,D',D,L',B,U'", "0:WWBWWBOOB,1:OOYOOYOOY,2:GGWGGWGGO,3:RRRRRRWWW,4:YBBYBBRBB,5:RRGYYGYYG")]
 		[DataRow("F,R',U,B',L,D',D,L',B,U',R", "0:WWWWWWOOO,1:OOYOOYOOY,2:GGGGGGGGG,3:WRRWRRWRR,4:BBBBBBBBB,5:RRRYYYYYY")]
-		public void TestRotations(string commandsText, string expected)
+		public async Task TestRotationsAsync(string commandsText, string expected)
 		{
-			var (factory, commands) = TestHelper.LoadFactoryAndCommands();
+			var (factory, commands) = await TestHelper.LoadFactoryAndCommandsAsync();
 			var cube = factory.InstantiateCube();
 			foreach (var rotation in commandsText.Split(','))
 			{

@@ -4,6 +4,6 @@ namespace RubiksCube.JsonDataProvider.Model
 {
 	public interface IRotationsDataProvider
 	{
-		IList<ICubeFaceRotation> LoadAllRotations();
+		Task<IList<ICubeFaceRotation>> LoadAllRotationsAsync();
 	}
 }

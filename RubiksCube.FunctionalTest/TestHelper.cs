@@ -23,7 +23,7 @@ namespace RubiksCube.FunctionalTest
 			}
 			return sb.ToString();
 		}
-		public static (ICubeFactory factory, Dictionary<string, IRotationCommand> commands) LoadFactoryAndCommands()
+		public static async Task<(ICubeFactory factory, Dictionary<string, IRotationCommand> commands)> LoadFactoryAndCommandsAsync()
 		{
 			const string fileName = "Assets//rotations.json";
 			Assert.IsTrue(File.Exists(fileName));
@@ -32,7 +32,7 @@ namespace RubiksCube.FunctionalTest
 			var factory = new CubeFactory(dataProvider);
 
 			var rotationsLoader = factory.GetCubeRotationCommandLoader();
-			var allCommands = rotationsLoader.LoadCommands();
+			var allCommands = await rotationsLoader.LoadCommandsAsync();
 
 			return (factory, allCommands.ToDictionary(t=>t.CommandName,t=>t));
 		}

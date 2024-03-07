@@ -9,11 +9,11 @@ namespace RubiksCube.Core.Model
 		{
 			_cubeFactory = cubeFactory;
 		}
-		public IList<IRotationCommand> LoadCommands()
+		public async Task<IList<IRotationCommand>> LoadCommandsAsync()
 		{
 			var rv = new List<IRotationCommand>();
 			var data = _cubeFactory.GetRotationsDataProvider();
-			var rotations = data.LoadAllRotations();
+			var rotations = await data.LoadAllRotationsAsync();
 			foreach (var rotation in rotations)
 			{
 				rv.Add(_cubeFactory.InstantiateRotationCommand(rotation.ClockwiseKey, rotation, true));
