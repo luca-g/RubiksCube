@@ -7,13 +7,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RubiksCube.Core", "RubiksCu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RubiksCube.JsonDataProvider", "RubiksCube.JsonDataProvider\RubiksCube.JsonDataProvider.csproj", "{AC26379C-08B1-4574-A174-62A7524B1191}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RubiksCube.CoreTests", "RubiksCube.CoreTests\RubiksCube.CoreTests.csproj", "{0605F208-5361-4667-B92B-72A9059718DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RubiksCube.CoreTests", "RubiksCube.CoreTests\RubiksCube.CoreTests.csproj", "{0605F208-5361-4667-B92B-72A9059718DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RubiksCube.JsonDataProviderTests", "RubiksCube.JsonDataProviderTests\RubiksCube.JsonDataProviderTests.csproj", "{43E9C3C9-A9A1-4905-809C-9733AB39D690}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RubiksCube.JsonDataProviderTests", "RubiksCube.JsonDataProviderTests\RubiksCube.JsonDataProviderTests.csproj", "{43E9C3C9-A9A1-4905-809C-9733AB39D690}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RubiksCube.FunctionalTest", "RubiksCube.FunctionalTest\RubiksCube.FunctionalTest.csproj", "{8AA66BAE-810A-4047-9E31-E272C03F861E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RubiksCube.FunctionalTest", "RubiksCube.FunctionalTest\RubiksCube.FunctionalTest.csproj", "{8AA66BAE-810A-4047-9E31-E272C03F861E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RubiksCube.Console", "RubiksCube.Console\RubiksCube.Console.csproj", "{32E79722-3B97-42BB-B7E7-E9480613CEC0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RubiksCube.Console", "RubiksCube.Console\RubiksCube.Console.csproj", "{32E79722-3B97-42BB-B7E7-E9480613CEC0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RubiksCube.WebRazor", "RubiksCube.WebRazor\RubiksCube.WebRazor.csproj", "{4B8BE9F0-D10D-43A7-8C7E-5C90C1461D10}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{32E79722-3B97-42BB-B7E7-E9480613CEC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{32E79722-3B97-42BB-B7E7-E9480613CEC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{32E79722-3B97-42BB-B7E7-E9480613CEC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B8BE9F0-D10D-43A7-8C7E-5C90C1461D10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B8BE9F0-D10D-43A7-8C7E-5C90C1461D10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B8BE9F0-D10D-43A7-8C7E-5C90C1461D10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B8BE9F0-D10D-43A7-8C7E-5C90C1461D10}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

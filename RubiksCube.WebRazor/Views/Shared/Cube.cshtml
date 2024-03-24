@@ -1,0 +1,119 @@
+﻿@using RubiksCube.Core.Interface
+@model CommandCubeResult
+
+<style>
+    .cube-layout {
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        justify-items: center;
+        gap: 20px;
+        margin-top:60px;
+    }
+
+    .cube-face {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .cube-faces {
+        display: grid;
+        grid-template-columns: repeat(3, 33px);
+        grid-gap: 2px;
+        margin-bottom: 10px;
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .tile {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 33px;
+        height: 33px;
+        font-size: 12px;
+    }
+    .W { background-color: white; }
+    .O { background-color: orange; }
+    .G { background-color: green; color:white;}
+    .R { background-color: red; color:white; }
+    .B { background-color: blue; color:white; }
+    .Y { background-color: yellow; }
+    .parameter-button {
+        padding: 5px 10px;
+        margin: 2px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        background-color: #f0f0f0;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        transition: background-color 0.3s ease;
+    }
+    .parameter-button:hover {
+        background-color: #e2e2e2;
+    }
+
+    .error-banner {
+        background-color: red;
+        color: white;
+        margin: 10px 0 10px;
+        padding:20px;
+    }
+</style>
+
+<button type="button" class="parameter-button" data-value="">Cube Reset</button>
+@if(Model.error!=null && Model.error.Length>0)
+{
+    <p class="error-banner">@Model.error</p>
+}
+@if (Model.resultCube != null)
+{
+
+    <div class="cube-layout">
+        @{
+            int?[] faces = [null, 0, null, null, 1, 2, 3, 4, null, 5, null, null];
+            char[] faceIndexCommand = ['U', 'L', 'F', 'R', 'B', 'D'];
+            foreach (var facesIndex in faces)
+            {
+                <div class="cube-face">
+                    @if (facesIndex != null)
+                    {
+                        var face = Model.resultCube.Faces[facesIndex.Value];
+                        var baseCommand = Model.rotationString;
+                        if(baseCommand!=null&&baseCommand.Length>0)
+                        {
+                            baseCommand = baseCommand + ',';
+                        }
+                        else
+                        {
+                            baseCommand = "";
+                        }
+                        var command1 = faceIndexCommand[facesIndex.Value].ToString();
+                        var command2 = command1 + "1";
+                        var baseAndCommand1 = $"{baseCommand}{command1}";
+                        var baseAndCommand2 = $"{baseCommand}{command2}";
+                        <div class="cube-faces">
+                            @for (int squareIndex = 0; squareIndex < 9; squareIndex++)
+                            {
+                                var squareColor = face!.Squares[squareIndex].ToString()[0];
+                                <div class="tile @squareColor">@squareColor</div>
+                            }
+                        </div>
+                        @if (Model.blockRotations == false)
+                        {
+                            <div class="button-container">
+                                <button type="button" class="parameter-button" data-value="@baseAndCommand1">@command1 &rArr;</button>
+                                <button type="button" class="parameter-button" data-value="@baseAndCommand2">@command1 &lArr;</button>
+                            </div>
+                        }
+                    }
+                </div>
+            }
+        }
+    </div>
+}
